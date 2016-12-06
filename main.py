@@ -12,6 +12,7 @@ def get_all_tweets(user=config.TWITTER_TARGET_USER):
 						access_token_secret = config.TWITTER_TOKEN_SECRET)
 	return api.GetUserTimeline(screen_name=user)
 
+
 def get_filtered_tweets(filter_function, user = config.TWITTER_TARGET_USER):
 	return ( t for t in get_all_tweets(user) if filter_function(t) )
 
